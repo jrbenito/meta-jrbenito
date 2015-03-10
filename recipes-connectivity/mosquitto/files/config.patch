@@ -1,0 +1,11 @@
+--- mosquitto-1.3.5/config.mk	2015-02-26 23:10:43.343973095 -0300
++++ mosquitto-1.3.5/config.mk	2015-02-26 23:10:54.619973092 -0300
+@@ -213,7 +213,7 @@
+ 
+ 
+ INSTALL?=install
+-prefix=/usr/local
++prefix=/usr
+ mandir=${prefix}/share/man
+ localedir=${prefix}/share/locale
+ STRIP?=strip
