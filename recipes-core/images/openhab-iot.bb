@@ -2,12 +2,11 @@ SUMMARY = "Provides a basic image capable for running OpenHAB, Mosquitto and oth
 
 LICENSE = "MIT"
 
-inherit core-image
-
-IMAGE_INSTALL += "\
-                  kernel-modules \
-     packagegroup-core-ssh-dropbear \
-                  screen \
-                  openhab \
-                  mosquitto \
+IMAGE_FEATURES += "package-management ssh-server-openssh \
                   "
+
+IMAGE_INSTALL += "packagegroup-core-boot packagegroup-core-full-cmdline ${CORE_IMAGE_EXTRA_INSTALL} \
+                  kernel-modules kernel-devicetree \
+                  screen openhab mosquitto \
+                 "
+inherit core-image
